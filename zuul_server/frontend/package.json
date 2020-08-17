@@ -1,0 +1,48 @@
+{
+  "name": "scrumdemo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "autoprefixer": "^9.8.0",
+    "axios": "^0.19.2",
+    "echarts": "^4.8.0",
+    "echarts-for-react": "^2.0.16",
+    "moment": "^2.26.0",
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.1",
+    "prop-types": "^15.5.7",
+    "react": "^16.13.1",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-transition-group": "^4.4.1",
+    "tailwindcss": "^1.4.6",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "build:css": "postcss src/styles/index.css -o src/index.css",
+    "watch:css": "postcss src/styles/index.css -o src/index.css",
+    "start": "yarn run watch:css && react-scripts start",
+    "build": "yarn run watch:css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

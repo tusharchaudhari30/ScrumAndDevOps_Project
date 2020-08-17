@@ -1,0 +1,2 @@
+# Project exclude paths
+/zuul_server/frontend/node_modules/
