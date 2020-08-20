@@ -29,7 +29,7 @@ class Kanban extends Component {
         wrap.classList.toggle('hidden');
     }
     modifywork = (work) => {
-        ClientCrud.update(work, "work").then(u => UserRest.getBoard().then((data) => {
+        ClientCrud.update(work, "work").then(u => UserRest.getBoard(this.props.project.id).then((data) => {
             this.setState({cycle: data});
         }));
     }
@@ -53,7 +53,7 @@ class Kanban extends Component {
 
     deletework = (work) => {
         ClientCrud.delete(work, "work").then(u =>
-            UserRest.getBoard().then((data) => {
+            UserRest.getBoard(this.props.project.id).then((data) => {
                 this.setState({cycle: data});
             })
         );

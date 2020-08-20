@@ -49,10 +49,10 @@ class GanntChart extends Component {
         this.setState({epics: old});
     }
     modifyepic = (epic) => {
-        ClientCrud.update(epic, "epic").then(u => UserRest.getTimeline().then(data => this.setState({epics: data})));
+        ClientCrud.update(epic, "epic").then(u => UserRest.getTimeline(this.props.project.id).then(data => this.setState({epics: data})));
     }
     modifywork = (work) => {
-        ClientCrud.update(work, "work").then(u => UserRest.getTimeline().then(data => this.setState({epics: data})));
+        ClientCrud.update(work, "work").then(u => UserRest.getTimeline(this.props.project.id).then(data => this.setState({epics: data})));
     }
     addepic = () => {
         this.togglemodalepicform(
