@@ -31,7 +31,7 @@ public class UserService {
     }
 
     public List<Cycle> getBoard(String projectId) {
-        List<Cycle> cycleList = this.cycleRepository.findAllByProjectIdOrderByPosition("1");
+        List<Cycle> cycleList = this.cycleRepository.findAllByProjectIdOrderByPosition(projectId);
         cycleList.forEach(cycle -> cycle.setWorkList(workRepository.findAllByCycleIdOrderByPosition(cycle.getId())));
         return cycleList;
     }

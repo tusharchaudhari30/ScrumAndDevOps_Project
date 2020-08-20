@@ -9,6 +9,7 @@ import Login from "./Login";
 import MainNav from "./Component/Navigation/MainNav";
 import BackLogs from "./Component/backlogs/BackLogs";
 import UserRest from "./Client/UserRest";
+import AuthUtil from "./Client/AuthUtil";
 
 class App extends Component {
     state = {
@@ -18,9 +19,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        //AuthUtil.checkToken().then(data => this.setState({auth: data}));
-        this.setState({auth: true});
-        UserRest.getProjects().then(data => this.setState({projects: data, project: data[0]}));
+        AuthUtil.checkToken().then(data => {
+            this.setState({auth: data})
+            if(data){
+                UserRest.getProjects().then(data => this.setState({projects: data, project: data[0]}));
+            }
+        });
+        //this.setState({auth: true});
+
     }
 
     changeproject=(data)=>{
@@ -28,6 +34,9 @@ class App extends Component {
     }
     updateauth = (data) => {
         this.setState({auth: data});
+        if(data){
+            UserRest.getProjects().then(data => this.setState({projects: data, project: data[0]}));
+        }
     }
     loginauthentication = () => {
         if (this.state.auth) {
