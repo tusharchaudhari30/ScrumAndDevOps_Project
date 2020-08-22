@@ -49,7 +49,6 @@ public class UserController {
             } catch (HttpClientErrorException httpClientErrorException) {
                 return false;
             }
-
         } else {
             return false;
         }
