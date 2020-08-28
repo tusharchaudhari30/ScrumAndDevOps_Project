@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component,lazy} from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Sidebar from "./Component/Navigation/Sidebar";
 import Dashboard from "./Component/Dashboard/Dashboard";
-import Board from "./Component/Board/Board";
 import GanntChart from "./Component/GanntChart/GanntChart";
 import './App.css'
 import Login from "./Login";
@@ -17,6 +16,7 @@ class App extends Component {
         projects: [],
         project:null
     }
+    Board=lazy(()=>import("./Component/Board/Board"));
 
     componentDidMount() {
         AuthUtil.checkToken().then(data => {
@@ -26,6 +26,7 @@ class App extends Component {
             }
         });
         //this.setState({auth: true});
+        //UserRest.getProjects().then(data => this.setState({projects: data, project: data[0]}));
 
     }
 

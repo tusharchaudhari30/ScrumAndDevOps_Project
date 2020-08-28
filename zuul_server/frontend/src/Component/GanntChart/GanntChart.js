@@ -59,7 +59,8 @@ class GanntChart extends Component {
             {
                 name: "",
                 description: "",
-                projectId: "1"
+                projectId: this.props.project.id,
+                progress:0
             }
         );
     }

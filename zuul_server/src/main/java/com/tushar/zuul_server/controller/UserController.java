@@ -25,15 +25,10 @@ public class UserController {
     }
 
     @GetMapping(value = {"/project/**"})
-    public String index() {
+    public String project() {
         return "project";
     }
 
-    @GetMapping(value = "/tushar")
-    @ResponseBody
-    public String tushar(){
-        return "Hello World";
-    }
     @PostMapping(value = "/login")
     @ResponseBody
     public Boolean login(String username, String password, HttpServletRequest request, HttpServletResponse responses) {
