@@ -1,0 +1,2 @@
+# ScrumAndDevOps_Project
+This is a centralized, highly customizable project management system. All projects are logged into a central database and each one goes through a number of workflows (processes). Workflows control the status of the project as well as the rules by which it transitions to other statuses. It is built using Microservices, ReactJs, Spring Boot, Netflix OSS stack with Oauth2 server.
