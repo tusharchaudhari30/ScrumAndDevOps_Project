@@ -4,12 +4,12 @@ import Navlist from "./Navlist";
 class Navmenu extends Component {
     constructor(props) {
         super(props);
-        this.state={navlist:this.props.navlist}
+        this.state = {navlist: this.props.navlist}
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
-        if(prevProps.navlist!==this.props.navlist){
-            this.setState({navlist:this.props.navlist});
+        if (prevProps.navlist !== this.props.navlist) {
+            this.setState({navlist: this.props.navlist});
         }
     }
 

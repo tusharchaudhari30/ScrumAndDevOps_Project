@@ -4,7 +4,10 @@ import com.tushar.project_management.Model.*;
 import com.tushar.project_management.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.text.SimpleDateFormat;
 import java.util.Collections;
@@ -30,6 +33,7 @@ public class DataLoader implements CommandLineRunner {
         this.projectRepository = projectRepository;
         this.userRepository = userRepository;
     }
+
 
     @Override
     public void run(String... args) throws Exception {

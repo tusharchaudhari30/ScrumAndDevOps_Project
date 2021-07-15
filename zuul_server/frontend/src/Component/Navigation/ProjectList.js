@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
 class ProjectList extends Component {
-    updateproject=()=>{
+    updateproject = () => {
         this.props.update(this.props.project);
         this.props.toggleprojects();
     }
+
     render() {
         return (
             <div

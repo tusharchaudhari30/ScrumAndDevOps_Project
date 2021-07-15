@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false
+      database: scrumdash
+  application:
+    name: project_management
+server:
+  port: 8081
+eureka.client.serviceUrl.defaultZone: http://localhost:8761/eureka/
+
+

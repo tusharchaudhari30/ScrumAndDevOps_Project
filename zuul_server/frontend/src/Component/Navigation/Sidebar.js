@@ -5,33 +5,6 @@ import ProfileInfo from "./ProfileInfo";
 import TopNav from "./TopNav";
 
 class Sidebar extends Component {
-    constructor(props) {
-        super(props);
-        this.wrapper = React.createRef();
-        this.state={navlist:this.getnavlist(this.props.project)};
-    }
-    toggleSidebar = () => {
-        const wrap = this.wrapper.current;
-        wrap.classList.toggle('hidesidebar');
-    }
-    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
-        if(prevProps.project!==this.props.project){
-            this.setState({navlist:this.getnavlist(this.props.project)})
-        }
-    }
-
-    getnavlist=(project)=>{
-        if(project!==null){
-            switch (project.projectType) {
-                case "kanban":return this.kanban
-                case "scrum": return this.scrum
-                default:return null
-            }
-        }
-        else {
-            return []
-        }
-    }
     kanban = [
         {
             id: 0,
@@ -85,6 +58,38 @@ class Sidebar extends Component {
         },
 
     ]
+
+    constructor(props) {
+        super(props);
+        this.wrapper = React.createRef();
+        this.state = {navlist: this.getnavlist(this.props.project)};
+    }
+
+    toggleSidebar = () => {
+        const wrap = this.wrapper.current;
+        wrap.classList.toggle('hidesidebar');
+    }
+
+    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
+        if (prevProps.project !== this.props.project) {
+            this.setState({navlist: this.getnavlist(this.props.project)})
+        }
+    }
+
+    getnavlist = (project) => {
+        if (project !== null) {
+            switch (project.projectType) {
+                case "kanban":
+                    return this.kanban
+                case "scrum":
+                    return this.scrum
+                default:
+                    return null
+            }
+        } else {
+            return []
+        }
+    }
 
     render() {
         return (
