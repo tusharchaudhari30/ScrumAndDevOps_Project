@@ -26,6 +26,7 @@ public class EpicRestController {
     @PreAuthorize("#oauth2.hasAnyScope('ui')")
     @PostMapping("/epic/update")
     public Epic updateEpic(@RequestBody Epic epic) {
+        System.out.println(epic);
         return this.epicRepository.save(epic);
     }
 

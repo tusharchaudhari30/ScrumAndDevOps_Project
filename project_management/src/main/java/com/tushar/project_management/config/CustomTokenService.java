@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
-public class CustomTokenService implements ResourceServerTokenServices {
+    public class CustomTokenService implements ResourceServerTokenServices {
 
     @Autowired
     private RestTemplate restTemplate;

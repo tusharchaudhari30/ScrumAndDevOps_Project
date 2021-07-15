@@ -1,6 +1,7 @@
 package com.tushar.project_management.Model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -10,11 +11,13 @@ import java.util.List;
 
 @Data
 @Document
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Project {
     @Id
     String id;
+    String projectType;
     String name;
-    List<String> userList;
+    List<String> userIdList;
 }

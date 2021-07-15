@@ -33,7 +33,10 @@ class MainNav extends Component {
                                 </div>
                                 <div ref={this.projects}
                                      className="bg-white absolute mt-1 border-gray-500 border-l border-r border-t w-40 hidden font-semibold">
-                                    {this.props.projects.map((project,index)=><Link key={index} to={"/project/"}><ProjectList toggleprojects={this.toggleprojects} project={project} update={this.props.changeproject}/></Link>)}
+                                    {this.props.projects.map((project, index) => <Link key={index}
+                                                                                       to={"/project/"}><ProjectList
+                                        toggleprojects={this.toggleprojects} project={project}
+                                        update={this.props.changeproject}/></Link>)}
                                 </div>
                             </button>
                             <button

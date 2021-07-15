@@ -1,5 +1,5 @@
 class ClientCrud {
-    static Resthost: string = "http://localhost:8080/api";
+    static Resthost: string = "http://localhost:8080/api/project";
 
     static update(objects, name) {
         return fetch(this.Resthost + "/" + name + "/update", {
